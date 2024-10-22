@@ -3,3 +3,8 @@
 <p>
   This project involves building a full-stack web application using the Django framework, known for its modularity and developer-friendly design. Testing is utilized to validate the models being the Recipes of the application.
 </p>
+
+<h2>Features</h2>
+<ul>
+  <li>Recipe Schema: Name, ingredients, cooking time</li>
+</ul>

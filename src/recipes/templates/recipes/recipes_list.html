@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Recipes List</title>
+    </head>
+    <body>
+
+        <div class="list-flex-container">
+
+
+            <div class="welcome-container">
+                
+                <div class="recipe-container">
+                    <h2 class="main-header text-center">Full List of Recipes</h2>
+
+                    <div class="recipe-list-container container mt-4">
+                        <div class="row custom-grid">
+                            {% for object in object_list %}
+
+                            <div class="recipe-card col-12 col-sm-6 col-lg-3 mb-4">
+                                <a href="{{ object.get_absolute_url }}" class="recipe-wrapper">
+                                    <div class="detail-container">
+                                        <img src="{{ object.pic.url }}" class="recipe-image img-fluid" alt="{{ object.name }}" />
+                                        <div class="recipe-main-holder">
+                                            <p class="recipe-link">{{ object.name }}</p>
+
+                                            <div class="description-container">
+                                                <br/>
+                                                <span class="description-field">{{ object.name }}</span> 
+                                                <hr/>
+                                                <p class="desc-text">{{ object.description }}</p>
+                                                <br/>
+                                                <p class="desc-link">Click to view recipe</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -22,15 +22,11 @@ class Recipe(models.Model):
         return self.ingredients.split(",")
     
     def calculate_difficulty(self):
-        num_ingredients = len(self.return_ingredients_as_list())
-        if self.cooking_time < 10 and num_ingredients < 4:
-            return "Easy"
-        elif self.cooking_time < 10 and num_ingredients >= 4:
-            return "Medium"
-        elif self.cooking_time >= 10 and num_ingredients < 4:
-            return "Intermediate"
-        elif self.cooking_time >= 10 and num_ingredients >= 4:
-            return "Hard"
+        ingredients = self.ingredients.split(',')
+        if self.cooking_time < 30:
+            return 'Easy' if len(ingredients) < 6 else 'Medium'
+        else:
+            return 'Intermediate' if len(ingredients) < 6 else 'Hard'
         
     def save(self, *args, **kwargs):
         self.difficulty = self.calculate_difficulty()

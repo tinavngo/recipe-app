@@ -6,7 +6,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpRequest
 
-
 # define a function view called login_view that takes a request from the user
 def login_view(request: HttpRequest):
     #initialize:
@@ -39,6 +38,7 @@ def login_view(request: HttpRequest):
 
     #load the login page using "context" information
     return render(request, 'auth/login.html', context)
+    
 
 #define a function view called logout_view that takes a request from user
 def logout_view(request: HttpRequest):

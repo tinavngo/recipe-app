@@ -26,15 +26,34 @@
                              organize, and share your favorite recipes. Whether you're an experienced cook or just starting out,
                              RecipeMe makes it easy to keep track of all your delicious ideas.</p>
 
-                        <div>
-                                <a href="{%url 'login' %}">
-                                <button class="submit-button-1">Let's Get Started!</button>
-                            </a>
-                            </div>
-                    </div>
+                        <div class="login-form">
+                            <p class="login-welcome">Login to start</p>
+                            <!-- Error message display -->
+                            {% if error_message %}
+                            <p class="error">{{ error_message }}</p>
+                            {% endif %}
+                            
+                            <!-- LOGIN FORM -->
+                            <form action="{% url 'login' %}" method="POST" class="login">
+                                {% csrf_token %}
+                                <div class="username-field">
+                                    <img src="{% static 'images/user.svg' %}" class="login-icon" />
+                                    {{ form.username }}
+                                </div>
+                                <div class="username-field">
+                                    <img src="{% static 'images/lock.svg' %}" class="login-icon" />
+                                    {{ form.password }}
+                                </div>
+                                <br/>
+                                <button type="submit" class="submit-button">Login</button>
+                            </form>
+                        </div>
+                        <p class="dont-have-account">Don't have an account? <a href="#" id="registerLink">Register here</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
         <script src="{% static 'js/script.js' %}"></script>
     </body>

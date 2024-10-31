@@ -5,6 +5,10 @@ html, body {
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: -1;
+    height: 98vh;
+}
+
+body.elongated-view {
     min-height: 150vh;
 }
 
@@ -39,9 +43,30 @@ html, body {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    border-color: gray;
-    border: 2px 2px 2px;
+    border-color: rgba(3, 105, 3, 0.308);
+    border: 3px 3px 3px;
     border-style: solid;
+}
+
+.logout-container {
+    background-color: white;
+    width: 900px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgba(3, 105, 3, 0.308);
+    border: 3px 3px 3px;
+    border-style: solid;
+}
+
+.logout-header {
+    color: white;
+    font-style: italic;
+    text-shadow: 3px 3px 3px rgba(13, 189, 13, 0.473);
 }
 
 .intro-1 {
@@ -70,8 +95,10 @@ html, body {
     text-align: center;
 }
 
-.login-welcome {
+.login-header {
+    font-family: "Montserrat", cursive;
     font-weight: 600;
+    font-style: italic;
 }
 
 .home-title {
@@ -91,6 +118,29 @@ html, body {
     margin: 3%;
 }
 
+.submit-button-1 {
+    background-color: green;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: aliceblue;
+    border-color: white;
+    outline: none;
+    transition: all 0.25s ease; /* Smooth transition for all properties */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    height: 100px;
+    width: 250px;
+    font-size: 20px;
+    border:solid rgba(13, 175, 13, 0.644);
+}
+
+.submit-button-1:hover {
+    cursor: pointer;
+    background-color: rgba(0, 128, 0, 0.644);
+    transform: scale(1.025);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.603);
+}
+
 .submit-button {
     background-color: green;
     padding: 5px 20px;
@@ -108,20 +158,49 @@ html, body {
     background-color: rgba(0, 128, 0, 0.644);
 }
 
+
 /**
 *
 * RECIPE COLLECTION PAGE
 *
 **/
 
+.logout-button-onlist {
+    background-color: beige;
+    padding: 10px 20px;
+    border: 2px solid rgba(3, 105, 3, 0.308);
+    border-radius: 10px;
+    transform: translateX(830%);
+    color: black;
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.logout-button {
+    transform: translateX(800%);
+    position: absolute;
+    background-color: beige;
+    padding: 10px 20px;
+    border: 2px solid rgba(3, 105, 3, 0.308);
+    border-radius: 10px;
+    color: black;
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 45%;
+    text-decoration: none;
+}
 
 .main-header {
-    color: white;
-    font-weight: 800;
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    color: black;
+    font-weight: 600;
     font-size: 40px;
-    background-color: rgba(255, 255, 255, 0.151);
+    background-color: beige;
     padding: 20px 20px;
-    border: 2px solid gray;
+    border: 2px solid rgba(3, 105, 3, 0.308);
     border-radius: 10px;
     width: 600px;
     z-index: 1;
@@ -205,9 +284,13 @@ html, body {
 }
 
 .desc-link {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    color: black;
     text-decoration: underline;
     justify-content: baseline;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 25px;
 }
 
 .description-field {
@@ -215,7 +298,7 @@ html, body {
     font-family: "Caveat", cursive;
     font-optical-sizing: auto;
     color: gray;
-    font-size: larger;
+    font-size: 35px;
 }
 
 .desc-text {
@@ -228,9 +311,10 @@ html, body {
 .recipe-link {
     margin-top: 10px;
     color: black;
-    font-weight: 500;
-    font-size: large;
+    font-weight: 600;
+    font-size: 30px;
     font-family: "Caveat", cursive;
+    font-style: normal;
 }
 
 @media (max-width: 576px) {
@@ -316,7 +400,10 @@ html, body {
     color: rgba(2, 51, 2, 0.76);
 }
 .details-header {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Concert One", sans-serif;
+    font-style: italic;
+    font-size: 55px;
+    font-optical-sizing: auto;
     color: rgba(0, 128, 0, 0.644);
     padding-bottom: 10px;
 }

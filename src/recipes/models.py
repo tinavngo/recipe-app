@@ -14,7 +14,7 @@ class Recipe(models.Model):
     def __str__(self):
         return str(self.name)
     
-    def _get_asbolute_url(self):
+    def get_absolute_url(self):
         # Reverse function returns and absolute path matching a given view and optional parameters.
         return reverse ('recipes:detail', kwargs={'pk': self.pk})
     

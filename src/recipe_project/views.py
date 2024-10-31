@@ -39,3 +39,11 @@ def login_view(request: HttpRequest):
 
     #load the login page using "context" information
     return render(request, 'auth/login.html', context)
+
+#define a function view called logout_view that takes a request from user
+def logout_view(request: HttpRequest):
+    logout(request)
+    return redirect('logout_success')
+
+def logout_success(request):
+    return render(request, 'auth/success.html')
